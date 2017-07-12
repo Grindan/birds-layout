@@ -1,0 +1,124 @@
+@import url("base.less");
+
+@color-orange: #ec9e03;
+
+.wrapper { 
+    width: 78%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-wrapper {
+    background-image: url("../images/header-background.png");
+    background-size: 100%;
+    text-transform: uppercase;
+    //max-height: 566px;
+
+    header {
+        padding-top: 28px;
+        .logo {
+            width: 50%;
+            color: white;       // for all
+            display: flex;
+            align-items: center;
+        }
+
+        .navigation {
+            background: @color-main-yellow;
+            width: 50%;
+            height: 41px;
+            box-shadow: -10px -10px 0px rgba(245, 197, 6, 0.3), -5px -5px 0 rgba(245, 197, 6, 0.3);
+            display: flex;
+            &__element {
+                img, p { display: inline-block; }
+                color: @color-dark-text;
+                margin: 0 auto;
+                width: 33%;
+                border-right: 1px solid @color-dark-text;
+                &:last-child { border: none; }
+            }
+        }
+    }
+
+    &__media {
+        padding: 57px 0 71px 0;
+        &__player {
+            width: 50%;
+            img { 
+                width: 96%;
+                margin: 2%;
+            }
+        }
+        &__titles {
+            width: 50%;
+            text-align: center;
+        }
+    }
+}
+
+.icon-area {
+    height: 214px;
+    text-transform: uppercase;
+    background-image: url("../images/icons-background.png");
+    box-shadow: 0 0 5px 5px rgba(0,0,0, 0.2);
+    &__container {
+        height: 100%;
+        margin: 0 auto;
+        justify-content: space-around;
+
+        &__element {
+            width: 185px;
+            text-align: center;
+        }
+    }
+}
+
+.social {
+    background: url("../images/social-background.png");
+    height: 505px;
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    color: white;
+
+    align-items: stretch !important;      //////////////
+
+    .wrapper {justify-content: space-between;}
+    h2 {
+        padding: 42px 0 42px 11%;
+    }
+
+    &__post {
+        width: 64%;
+        background: @color-orange;
+        display: flex;
+        margin-bottom: 100px;
+
+        &__video {
+           // background: url("../images/vide-post-background.png");
+            height: 100%;
+        }
+
+    }
+
+    &__twitter {
+        width: 32%;
+        background: @color-orange;
+        height: 100%;
+    }
+}
+
+.features {
+    margin-top: 505px;
+    background-image: url("../images/features-background.png");
+    color: @color-main-yellow;
+
+    h2 {
+        text-align: center;
+        padding-top: 48px;
+    }
+
+    ul, img { width: 48%;}
+}
