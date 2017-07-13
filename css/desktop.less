@@ -1,8 +1,33 @@
 @import url("base.less");
+//@import url('https://fonts.googleapis.com/css?family=PT+Sans'); 
+    // font-family: 'PT Sans', sans-serif;
+    // заголовок в  секции 1
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700,700i,800i');
 
 @color-orange: #ec9e03;
 
-.wrapper { 
+body {
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1vw;
+}
+
+.logo-name {
+    margin-left: 0.6rem;;
+    font-style: italic;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+.logo-icon {
+    width: 4em;
+    height: 4em;
+}
+
+.wrapper {
     width: 78%;
     margin: 0 auto;
     display: flex;
@@ -12,38 +37,52 @@
 
 .top-wrapper {
     background-image: url("../images/header-background.png");
-    background-size: 100%;
-    text-transform: uppercase;
-    //max-height: 566px;
+    background-size: cover;
 
     header {
-        padding-top: 28px;
+        padding-top: 2em;
         .logo {
-            width: 50%;
-            color: white;       // for all
+            flex-grow: 1;
             display: flex;
             align-items: center;
+            &__title {
+                .logo-name;
+                e {
+                    font-weight: 100;
+                    font-style: normal;
+                    font-size: 0.5em;
+                }
+            }
         }
 
         .navigation {
+            flex-grow: 1;
             background: @color-main-yellow;
-            width: 50%;
-            height: 41px;
-            box-shadow: -10px -10px 0px rgba(245, 197, 6, 0.3), -5px -5px 0 rgba(245, 197, 6, 0.3);
+            box-shadow: -0.6em -0.6em 0px rgba(245, 197, 6, 0.3), -0.3em -0.3em 0 rgba(245, 197, 6, 0.3);
             display: flex;
             &__element {
-                img, p { display: inline-block; }
+                * { display: inline-block; }
+                padding: 0.5em 0;
                 color: @color-dark-text;
-                margin: 0 auto;
-                width: 33%;
+                text-align: center;
+                flex-grow: 1;
+                cursor: pointer;
                 border-right: 1px solid @color-dark-text;
                 &:last-child { border: none; }
+                &__name {
+                    font-size: 1em;
+                    margin-left: 0.7em;
+                }
+                &__icon {
+                    width: 1em;
+                    height: 1em;
+                }
             }
         }
     }
 
     &__media {
-        padding: 57px 0 71px 0;
+        padding: 1em 0 3em;
         &__player {
             width: 50%;
             img { 
@@ -54,23 +93,37 @@
         &__titles {
             width: 50%;
             text-align: center;
+            font-size: 5em;
+            p:first-child { color: @color-main-yellow; }
+            p:last-child { color: white; }
         }
     }
 }
 
 .icon-area {
-    height: 214px;
+    //padding: 1.5em 0;
     text-transform: uppercase;
     background-image: url("../images/icons-background.png");
     box-shadow: 0 0 5px 5px rgba(0,0,0, 0.2);
     &__container {
-        height: 100%;
-        margin: 0 auto;
-        justify-content: space-around;
+        // height: 100%;
+        // margin: 0 auto;
+        // justify-content: space-around;
 
         &__element {
-            width: 185px;
             text-align: center;
+            width: 26%;
+            border-right: 1px solid rgba(0,0,0, 0.3);
+            &:first-child { border-left: 1px solid rgba(0,0,0, 0.3); }
+
+
+            // тут не работают  бордеры :'(
+
+
+
+            p {
+                font-weight: 100;
+            }
         }
     }
 }
@@ -114,11 +167,29 @@
     margin-top: 505px;
     background-image: url("../images/features-background.png");
     color: @color-main-yellow;
+    padding-top: 50px;
+    padding-bottom: 100px;
 
     h2 {
         text-align: center;
         padding-top: 48px;
     }
 
-    ul, img { width: 48%;}
+    .wrapper {
+        justify-content: space-between;
+        img { width: 55%; }
+        ul { width: 35%; }
+        li { text-transform: none; }
+    }
+}
+
+footer {
+    padding: 5px;
+    margin: 0 auto;
+    background: #4c4c4c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 0 0 8px 5px rgba(0,0,0,0.6);
 }
