@@ -1,12 +1,5 @@
 @import url("base.less");
-//@import url('https://fonts.googleapis.com/css?family=PT+Sans'); 
-    // font-family: 'PT Sans', sans-serif;
-    // заголовок в  секции 1
-
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700,700i,800i');
-
-@color-orange: #ec9e03;
 
 body {
     text-transform: uppercase;
@@ -71,7 +64,7 @@ body {
                 &:last-child { border: none; }
                 &__name {
                     font-size: 1em;
-                    margin-left: 0.7em;
+                    margin-left: 0.3em;
                 }
                 &__icon {
                     width: 1em;
@@ -101,28 +94,26 @@ body {
 }
 
 .icon-area {
-    //padding: 1.5em 0;
     text-transform: uppercase;
     background-image: url("../images/icons-background.png");
     box-shadow: 0 0 5px 5px rgba(0,0,0, 0.2);
     &__container {
-        // height: 100%;
-        // margin: 0 auto;
-        // justify-content: space-around;
-
         &__element {
             text-align: center;
             width: 26%;
-            border-right: 1px solid rgba(0,0,0, 0.3);
-            &:first-child { border-left: 1px solid rgba(0,0,0, 0.3); }
-
-
-            // тут не работают  бордеры :'(
-
-
-
+            padding: 2em 0;
+            -moz-box-sizing: border-box; /* Для Firefox */
+            -webkit-box-sizing: border-box; /* Для Safari и Chrome */
+            box-sizing: border-box; /* Для IE и Opera */
+            border-left: 1px solid #c9c9c9;
+            &:last-child { border-right: 1px solid #c9c9c9; }
+            img {
+                height: 5em;
+                width: 6em;
+            }
             p {
                 font-weight: 100;
+                font-size: 1.5em;
             }
         }
     }
@@ -130,56 +121,106 @@ body {
 
 .social {
     background: url("../images/social-background.png");
-    height: 505px;
+    position: relative;
     z-index: -1;
     width: 100%;
-    position: absolute;
+    padding-bottom: 8rem;
     color: white;
 
-    align-items: stretch !important;      //////////////
+    .wrapper { 
+        justify-content: space-between; 
+        align-items: stretch;
+        padding-bottom: 5rem;
+    }
 
-    .wrapper {justify-content: space-between;}
-    h2 {
-        padding: 42px 0 42px 11%;
+    &__title {
+        padding: 1em 0 1em 11%;
+        font-size: 2.3em;
+        font-weight: 500;
     }
 
     &__post {
         width: 64%;
         background: @color-orange;
         display: flex;
-        margin-bottom: 100px;
-
-        &__video {
-           // background: url("../images/vide-post-background.png");
-            height: 100%;
+        justify-content: space-between;
+        &__text {
+            text-transform: none;
+            font-size: 2em;
+            font-weight: 100;
+            padding: 1em;
+            position: relative;
+            //width: 52%;
+            flex-grow: 1;
         }
-
+        img { width: 48%;
+        flex-grow: 1; }
     }
 
     &__twitter {
         width: 32%;
         background: @color-orange;
-        height: 100%;
+        text-align: center;
+        position: relative;
+        .fa-twitter {
+            color: #c18000;
+            font-size: 15em;
+            margin: 0 auto;
+        }
+        &__data {
+            cursor: pointer;
+            text-align: right;
+            font-size: 1.5em;
+            font-weight: 100;
+            padding: 1em 1em 0 0;
+        }
+        .social__plus { font-size: 2em; }
+    }
+
+    &__plus {
+        position: absolute;
+        font-weight: 500;
+        font-size: 1em;
+        right: 1rem;
+        bottom: 0.5rem;
     }
 }
 
 .features {
-    margin-top: 505px;
     background-image: url("../images/features-background.png");
     color: @color-main-yellow;
-    padding-top: 50px;
-    padding-bottom: 100px;
+    padding: 2rem 0 4rem;
 
-    h2 {
+    &__title {
         text-align: center;
-        padding-top: 48px;
+        font-size: 2.5em;
+        font-weight: 500;
     }
 
     .wrapper {
         justify-content: space-between;
+        align-items: flex-end;
         img { width: 55%; }
-        ul { width: 35%; }
-        li { text-transform: none; }
+        ul {
+            width: 35%;
+            list-style: none;
+            //list-style-position: outside; - doesn't work because of previous property
+            li {
+                text-transform: none;
+                font-size: 1.5em;
+                color: #a9a9a7;
+                margin-top: 1em;
+                text-indent: -1.3em;
+                &:before {
+                    content: "\f111";
+                    list-style-position: outside;
+                    color: @color-main-yellow;
+                    font-family: FontAwesome;
+                    font-size: 0.7em;
+                    margin-right: 1em;
+                }
+            }
+        }
     }
 }
 
