@@ -5,6 +5,7 @@
     <title>Birds</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/video-controls.js"></script>
 </head>
 <body>
     <section class="top-wrapper">
@@ -30,7 +31,16 @@
         </header>
         <div class="top-wrapper__media wrapper">
             <div class="top-wrapper__media__player">
-                <img src="images/player-background.png" alt="player"/>
+                <video id="video" poster="images/player-background.png">
+                    <source src="video/rio.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                    <source src="video/rio.ogg" type='video/ogg; codecs="theora, vorbis"'>
+                    <p>Your browser doesn't support video tag.</p>
+                </video>
+                <div class="controls">
+                    <button id="btnPlayOrPause" class="controls__element"><i id="btnPlayOrPauseIcon" class="fa fa-play"></i></button>
+                    <button id="btnVolume" class="controls__element"><i id="btnVolumeIcon" class="fa fa-volume-up" aria-hidden="true"></i></button>
+                    <input id="volume" min="0" max="1" step="0.1" type="range" />
+                </div>
             </div>
             <div class="top-wrapper__media__titles">
                 <p>the cool</p>

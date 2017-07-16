@@ -58,9 +58,34 @@
         padding: 1em 0 3em;
         &__player {
             width: 50%;
-            img { 
-                width: 96%;
-                margin: 2%;
+            position: relative;
+            &:hover .controls { opacity: 1; }
+            #video {
+                width: 100%;
+                //width: 96%;
+                //margin: 2%;
+            }
+            .controls {
+                position: absolute;
+                bottom: 0;
+                padding: 1em;
+                display: flex;
+                justify-content: space-around;
+                opacity: 0.7;
+                &__element {
+                    background: @color-main-yellow;
+                    border: none;
+                    color: white;
+                    font-size: 1.5em;
+                    bottom: 0;
+                    box-sizing: border-box;
+                    width: 1.7em;
+                    i { padding: 0.3em; }
+                }
+                #btnVolume {
+                    background: transparent;
+                    color: @color-main-yellow;
+                }
             }
         }
         &__titles {
@@ -82,9 +107,7 @@
             text-align: center;
             width: 26%;
             padding: 2em 0;
-            -moz-box-sizing: border-box; /* Для Firefox */
-            -webkit-box-sizing: border-box; /* Для Safari и Chrome */
-            box-sizing: border-box; /* Для IE и Opera */
+            box-sizing: border-box;
             border-left: 1px solid #c9c9c9;
             &:last-child { border-right: 1px solid #c9c9c9; }
             img {
