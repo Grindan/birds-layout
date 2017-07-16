@@ -38,8 +38,11 @@
                 </video>
                 <div class="controls">
                     <button id="btnPlayOrPause" class="controls__element"><i id="btnPlayOrPauseIcon" class="fa fa-play"></i></button>
-                    <button id="btnVolume" class="controls__element"><i id="btnVolumeIcon" class="fa fa-volume-up" aria-hidden="true"></i></button>
-                    <input id="volume" min="0" max="1" step="0.1" type="range" />
+                    <input id="duration" type="range" min="0" max="100" step="1" value="0" />
+                    <div>
+                        <button id="btnVolume" class="controls__element"><i id="btnVolumeIcon" class="fa fa-volume-up" aria-hidden="true"></i></button>
+                        <input id="volume" type="range" min="0" max="1" step="0.05" />
+                    </div>
                 </div>
             </div>
             <div class="top-wrapper__media__titles">

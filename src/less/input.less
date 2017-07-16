@@ -1,0 +1,69 @@
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+// for duration input
+    input#duration {
+        overflow: hidden;
+        width: 60%;
+        height: 1rem;
+        border-radius: 2em;
+        -webkit-appearance: none;
+        background-color: rgba(245, 197, 6, 0.5);
+    }
+    
+    input#duration::-webkit-slider-runnable-track {
+        height: 1.2rem;
+        -webkit-appearance: none;
+        color: rgba(245, 197, 6, 1);
+        margin-top: -1px;
+    }
+    
+    input#duration::-webkit-slider-thumb {
+        width: 0rem;
+        -webkit-appearance: none;
+        height: 100%;
+        cursor: pointer;
+        background: white;
+        box-shadow: -300px 0 0 300px rgba(245, 197, 6, 1);
+    }
+
+// for volume input
+    input#volume {
+        overflow: hidden;
+        position: absolute;
+        margin: -4.5em 0 0 -1em;
+        width: 8em;
+        height: 0.8em;
+        border-radius: 2em;
+        -webkit-appearance: none;
+        background-color: rgba(245, 197, 6, 0.5);
+    }
+    input#volume::-webkit-slider-runnable-track {
+        height: 10px;
+        -webkit-appearance: none;
+        color: rgba(245, 197, 6, 1);
+        margin-top: -1px;
+    }
+    input#volume::-webkit-slider-thumb {
+        width: 10px;
+        -webkit-appearance: none;
+        height: 100%;
+        cursor: pointer;
+        background: white;
+        box-shadow: -100px 0 0 100px rgba(245, 197, 6, 1);
+    }
+}
+
+/** FF*/
+input[type="range"]::-moz-range-progress {
+    background-color: rgba(245, 197, 6, 1);
+}
+input[type="range"]::-moz-range-track {
+    background-color: rgba(245, 197, 6, 0.5);
+}
+
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+    background-color: rgba(245, 197, 6, 1);
+}
+input[type="range"]::-ms-fill-upper {
+    background-color: rgba(245, 197, 6, 0.5);
+}

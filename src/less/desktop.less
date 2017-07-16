@@ -62,15 +62,16 @@
             &:hover .controls { opacity: 1; }
             #video {
                 width: 100%;
-                //width: 96%;
-                //margin: 2%;
             }
             .controls {
                 position: absolute;
+                box-sizing: border-box;
+                width: 100%;
                 bottom: 0;
                 padding: 1em;
                 display: flex;
                 justify-content: space-around;
+                align-items: center;
                 opacity: 0.7;
                 &__element {
                     background: @color-main-yellow;
@@ -82,10 +83,17 @@
                     width: 1.7em;
                     i { padding: 0.3em; }
                 }
+
                 #btnVolume {
                     background: transparent;
                     color: @color-main-yellow;
                 }
+                input#volume:hover, button#btnVolume:hover + input#volume { opacity: 1; }
+                #volume {
+                    transform: rotate(-90deg);
+                    opacity: 0;
+                }
+                
             }
         }
         &__titles {

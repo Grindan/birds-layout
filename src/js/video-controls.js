@@ -5,12 +5,16 @@ window.onload = function(){
     let btnPlayOrPauseIcon = document.getElementById('btnPlayOrPauseIcon');
     let playingStatus = { play: 'fa-play', pause: 'fa-pause' };
 
+    let duration = document.getElementById('duration');
+
     let btnVolume = document.getElementById('btnVolume');
     let btnVolumeIcon = document.getElementById('btnVolumeIcon');
     let volumeStatus = { aboveZero: 'fa-volume-up', zero: 'fa-volume-off' };
     let volume = document.getElementById('volume');
 
     btnPlayOrPause.addEventListener('click', playOrPauseVideo);
+    duration.addEventListener('change', changeTime);
+    video.addEventListener('timeupdate', watchTime)
     btnVolume.addEventListener('click', muteVideo);
     volume.addEventListener('change', changeVolume);
 
@@ -48,4 +52,11 @@ window.onload = function(){
         };
     }
 
+    function changeTime() {
+        video.currentTime = (duration.value / 100) * video.duration;
+    }
+
+    function watchTime() {
+        duration.value = (100 / video.duration) * video.currentTime;
+    }
 };
